@@ -41,7 +41,10 @@ if __name__ == "__main__":
         output_id = int(argv[2])
 
         # 出力
-        print "%d: %s" % (output_id, recipe.data[output_id])
+        if output_id in recipe.data:
+            print "%d: %s" % (output_id, recipe.data[output_id])
+        else:
+            print "レシピがありません。"
     else:
         print "引数が不正です。"
         quit()
