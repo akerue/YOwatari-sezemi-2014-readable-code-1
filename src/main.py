@@ -32,11 +32,16 @@ if __name__ == "__main__":
     # 引数を念のためチェック
     if argc == 2:
         recipe = Recipe(filepath=argv[1])
+
+        # 出力
+        for recipe_id, recipe_name in recipe.data.items():
+            print "%d: %s" % (recipe_id, recipe_name)
+    elif argc == 3:
+        recipe = Recipe(filepath=argv[1])
+        output_id = int(argv[2])
+
+        # 出力
+        print "%d: %s" % (output_id, recipe.data[output_id])
     else:
         print "引数が不正です。"
         quit()
-
-
-    # 出力
-    for recipe_id, recipe_name in recipe.data.items():
-        print "%d: %s" % (recipe_id, recipe_name)
