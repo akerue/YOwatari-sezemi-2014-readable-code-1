@@ -12,4 +12,5 @@ Python 2.7.6
 ============
 
 ```python
-$ python src/main.py
+% python src/main.py src/recipe.txt
+```

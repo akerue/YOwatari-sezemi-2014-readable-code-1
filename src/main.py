@@ -1,12 +1,24 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import sys
+
+argv = sys.argv
+argc = len(sys.argv)
+
 if __name__ == "__main__":
-    # 読み込みデータ
-    recipe = []
+    filepath = ""  # 引数で受け取るファイルパス
+    recipe = []    # 読み込みデータ
+
+    # 引数が多すぎる時
+    if argc == 2:
+        filepath = argv[1]
+    else:
+        print "引数が不正です。"
+        quit()
 
     # ファイル読み込み
-    with open("src/recipe.txt", 'rb') as fd:
+    with open(filepath, 'rb') as fd:
         for line in fd:
             recipe.append(line)
 
