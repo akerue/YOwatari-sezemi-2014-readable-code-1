@@ -10,7 +10,7 @@ if __name__ == "__main__":
     filepath = ""  # 引数で受け取るファイルパス
     recipe = []    # 読み込みデータ
 
-    # 引数が多すぎる時
+    # 引数を念のためチェック
     if argc == 2:
         filepath = argv[1]
     else:
@@ -23,5 +23,6 @@ if __name__ == "__main__":
             recipe.append(line)
 
     # 出力
-    for line in recipe:
-        print line,
+    for recipe_id, line in enumerate(recipe):
+        recipe_name = line.rstrip()  # 改行除去
+        print "%d: %s" % (recipe_id, recipe_name)
