@@ -24,4 +24,4 @@ if __name__ == "__main__":
 
     # 出力
     for line in recipe:
-        print line
+        print line,
